@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Myth</title>
+</head>
+
+
+<body>
+    <script src="scrl.js"></script>
+    <script src="prlx.js"></script>
+    <nav>
+        <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+        </div>
+        <div class="logo">
+            Myth
+        </div>
+        <div class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#info">O mnie</a></li>
+            <li><a href="https://github.com/LOLXDMATI/sd">projekty</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </div>
+
+        </form>
+    </nav>
+    <script>
+        const menuBtn = document.querySelector(".menu-icon span");
+        const searchBtn = document.querySelector(".search-icon");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const items = document.querySelector(".nav-items");
+        const form = document.querySelector("form");
+        menuBtn.onclick = () => {
+            items.classList.add("active");
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+        }
+        cancelBtn.onclick = () => {
+            items.classList.remove("active");
+            cancelBtn.classList.remove("show");
+            form.classList.remove("active");
+            cancelBtn.style.color = "#ff3d00";
+        }
+        searchBtn.onclick = () => {
+            form.classList.add("active");
+            searchBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+        }
+    </script>
+    <header>
+        <div class="parallax">
+            <section id="info" class="one">
+                <h1>Kim Jestem ?
+                    <p>Nazywam się Mateusz i pochodzę z Polski.<br> Jestem programistą w językach HTML, CSS i JS (Język JavaScript trochę umiem ale nie za bardzo).</p>
+                </h1>
+            </section>
+            <label id="dark-change"></label>
+    </header>
+    <main>
+
+        <div class="respon">
+        </div>
+    </main>
+    <script>
+        var content = document.getElementsByTagName('body')[0];
+        var darkMode = document.getElementById('dark-change');
+        darkMode.addEventListener('click', function() {
+            darkMode.classList.toggle('active');
+            content.classList.toggle('night');
+        })
+    </script>
+
+    <script>
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.burger');
+
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+            });
+
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = ''
+                } else {
+                    console.log(index);
+                    link.style.animation = 'navLinkFade 0.5s ease forwards ${7 / 1.5}s'
+                }
+            });
+
+        }
+
+        navSlide();
+    </script>
+    <script src="app.js"></script>
+
+
+    </section>
+
+    <script>
+        const parallax = document.getElementById("parallax");
+
+        window.addEventListener("scroll", function() {
+            let offset = window.pageYOffset;
+            parallax.style.backgroundPositionY = offset * 0.2 + "px";
+        })
+    </script>
+    <section id="kontakt" class="three">
+        <div class="container">
+            <form action="https://formcarry.com/s/aZ85b607NFC" method="POST" accept-charset="UTF-8">
+                <h3>Skontaktuj Się</h3>
+                <input type="text" name="nazwa" placeholder="Twoje Imię">
+                <input type="email" name="email" placeholder="Twój E-mail">
+                <input type="text" name="phone" placeholder="Twój Numer telefonu">
+                <input type="text" name="wiadomość" placeholder="Jak mogę ci pomóć">
+                <button name="submit">Wyślij</button>
+            </form>
+        </div>
+        <script src="https://carrier.formcarry.com/js/v1.js"></script>
+    </section>
+    </div>
+</body>
+
+</html>
